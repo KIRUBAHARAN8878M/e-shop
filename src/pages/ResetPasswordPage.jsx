@@ -11,6 +11,7 @@ import Typography from "@mui/material/Typography";
 import Snackbar from "@mui/material/Snackbar";
 import MuiAlert from "@mui/material/Alert";
 import { styled } from "@mui/material/styles";
+import { API_BASE_URL } from "../config";
 
 const Card = styled(MuiCard)(({ theme }) => ({
   display: "flex",
@@ -54,7 +55,7 @@ export default function ResetPasswordPage() {
     if (!validatePasswords()) return;
 
     try {
-      const response = await axios.post("http://localhost:5000/api/auth/reset-password", {
+      const response = await axios.post(`${API_BASE_URL}/api/auth/reset-password`, {
         token,
         password,
       });

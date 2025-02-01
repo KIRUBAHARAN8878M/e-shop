@@ -5,6 +5,7 @@ import { Box, Typography, Card, CardMedia, CardContent, Button } from "@mui/mate
 import Header from "../components/Header";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../redux/slices/cartSlice";
+import {API_BASE_URL} from "../config";
 
 export default function ItemDetailsPage() {
   const { id } = useParams(); // Get product ID from URL
@@ -14,7 +15,7 @@ export default function ItemDetailsPage() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/api/products/${id}`)
+      .get(`${API_BASE_URL}/api/products/${id}`)
       .then((response) => {
         setProduct(response.data);
         setLoading(false);

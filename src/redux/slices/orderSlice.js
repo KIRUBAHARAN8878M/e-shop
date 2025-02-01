@@ -1,15 +1,16 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
+import { API_BASE_URL } from "../../config";
 
 // Async action to checkout order
 export const checkoutOrder = createAsyncThunk("orders/checkoutOrder", async (cartItems) => {
-  const response = await axios.post("http://localhost:5000/api/orders", { items: cartItems });
+  const response = await axios.post(`${API_BASE_URL}/api/orders`, { items: cartItems });
   return response.data;
 });
 
 // Async action to fetch order history
 export const fetchOrders = createAsyncThunk("orders/fetchOrders", async () => {
-    const response = await axios.get("http://localhost:5000/api/orders");
+    const response = await axios.get(`${API_BASE_URL}/api/orders`);
     return response.data;
   });
 

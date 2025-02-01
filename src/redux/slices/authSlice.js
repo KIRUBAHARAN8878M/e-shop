@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-
-const API_URL = "http://localhost:5000/api/auth"; // Backend URL
+import { API_BASE_URL } from "../../config";
+const API_URL = `${API_BASE_URL}/api/auth`; // Backend URL
 
 // Register User
 export const registerUser = createAsyncThunk("auth/register", async (userData, { rejectWithValue }) => {

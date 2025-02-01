@@ -12,6 +12,7 @@ import MuiAlert from "@mui/material/Alert";
 import { styled } from "@mui/material/styles";
 import Link from "@mui/material/Link";
 import { useNavigate } from "react-router-dom";
+import { API_BASE_URL } from "../config";
 
 const Card = styled(MuiCard)(({ theme }) => ({
   display: "flex",
@@ -50,7 +51,7 @@ export default function ForgotPasswordPage() {
     if (!validateEmail()) return;
 
     try {
-      const response = await axios.post("http://localhost:5000/api/auth/forgot-password", { email });
+      const response = await axios.post(`${API_BASE_URL}/api/auth/forgot-password`, { email });
       setSnackbarSeverity("success");
       setSnackbarMessage(response.data.message || "Password reset link sent!");
       setOpenSnackbar(true);
