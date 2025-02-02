@@ -14,39 +14,36 @@ The E-Shop application is a **full-stack e-commerce platform** built using moder
 ---
 
 ## **3. Project Structure**
-```
-## **3. Project Structure**
+
+### **Frontend (React.js - Vite)**
 ```
 /eshop/
+│── src/
+│   ├── components/       # Reusable UI Components
+│   ├── pages/            # Application Pages
+│   ├── redux/            # Redux Toolkit State Management
+│   ├── App.js            # Main App Component
+│   ├── main.jsx          # React Root File
+│── .gitignore
+│── README.md
+│── eslint.config.js
+│── index.html
+│── package-lock.json
+│── package.json
+│── vite.config.js
 ```
+
+### **Backend (Express.js - Node.js)**
 ```
-│── eshop/ (Frontend - React.js)
-│   ├── src/
-│   │   ├── components/       # Reusable UI Components
-│   │   ├── pages/            # Application Pages
-│   │   ├── redux/            # Redux Toolkit State Management
-│   │   ├── App.js            # Main App Component
-│   │   ├── main.jsx          # React Root File
-│   ├──.gitignore
-│   ├──README.md
-│   ├──eslint.config.js
-│   ├──index.html
-│   ├──package-lock.json
-│   ├──package.json
-│   ├──vite.config.js
-```
-```
-│── server/ (Backend - Express.js)
-│   ├── controllers/          # Business Logic Handlers
-│   ├── models/               # MongoDB Schemas
-│   ├── routes/               # API Endpoints
-│   ├── middleware/           # Auth Middleware
-│   ├── config/               # Database Configuration
-│   ├── server.js             # Main Backend File
-│── .env                      # Environment Variables
-│── package.json              # Dependencies
-```
-```
+/server/
+│── controllers/          # Business Logic Handlers
+│── models/               # MongoDB Schemas
+│── routes/               # API Endpoints
+│── middleware/           # Auth Middleware
+│── config/               # Database Configuration
+│── server.js             # Main Backend File
+│── .env                  # Environment Variables
+│── package.json          # Dependencies
 ```
 
 ---
