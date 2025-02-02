@@ -116,7 +116,7 @@ export default function LoginPage() {
           <FormControl>
             <Box sx={{ display: "flex", justifyContent: "space-between" }}>
               <FormLabel htmlFor="password">Password</FormLabel>
-              <Link href="/register" variant="body2">
+              <Link to="/forgot-password" variant="body2">
                 Forgot your password?
               </Link>
             </Box>
@@ -139,7 +139,7 @@ export default function LoginPage() {
           </Button>
           <Typography sx={{ textAlign: "center" }}>
             Don&apos;t have an account?{" "}
-            <Link href="/register" variant="body2">
+            <Link to="/register" variant="body2">
               Sign up
             </Link>
           </Typography>
