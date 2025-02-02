@@ -18,7 +18,8 @@ The E-Shop application is a **full-stack e-commerce platform** built using moder
 ## **3. Project Structure**
 ```
 /eshop/
-
+```
+```
 │── eshop/ (Frontend - React.js)
 │   ├── src/
 │   │   ├── components/       # Reusable UI Components
@@ -33,7 +34,8 @@ The E-Shop application is a **full-stack e-commerce platform** built using moder
 │   ├──package-lock.json
 │   ├──package.json
 │   ├──vite.config.js
-
+```
+```
 │── server/ (Backend - Express.js)
 │   ├── controllers/          # Business Logic Handlers
 │   ├── models/               # MongoDB Schemas
@@ -44,7 +46,7 @@ The E-Shop application is a **full-stack e-commerce platform** built using moder
 │── .env                      # Environment Variables
 │── package.json              # Dependencies
 ```
-
+```
 ```
 
 ---
