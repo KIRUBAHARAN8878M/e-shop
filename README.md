@@ -5,7 +5,7 @@ The E-Shop application is a **full-stack e-commerce platform** built using moder
 
 ---
 
-For testing, use the below credentials:
+For testing, use the credentials:
       **Email    : testuser@gmail.com
       Password : Test$123**
       
