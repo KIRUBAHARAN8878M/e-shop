@@ -78,7 +78,7 @@ const authSlice = createSlice({
   name: "auth",
   initialState: {
     user: null,
-    token: localStorage.getItem("token") || null, // ✅ Retrieve token on refresh
+    token: localStorage.getItem("token") || null, 
     error: null,
     loading: false,
   },
@@ -86,7 +86,7 @@ const authSlice = createSlice({
     logout: (state) => {
       state.user = null;
       state.token = null;
-      localStorage.removeItem("token"); // ✅ Remove token on logout
+      localStorage.removeItem("token"); 
     },
   },
   extraReducers: (builder) => {
@@ -99,7 +99,7 @@ const authSlice = createSlice({
         state.loading = false;
         state.user = action.payload;
         state.token = action.payload.token;
-        localStorage.setItem("token", action.payload.token); // ✅ Store token after register
+        localStorage.setItem("token", action.payload.token); 
       })
       .addCase(registerUser.rejected, (state, action) => {
         state.loading = false;
@@ -113,7 +113,7 @@ const authSlice = createSlice({
         state.loading = false;
         state.user = action.payload;
         state.token = action.payload.token;
-        localStorage.setItem("token", action.payload.token); // ✅ Store token after login
+        localStorage.setItem("token", action.payload.token); 
       })
       .addCase(loginUser.rejected, (state, action) => {
         state.loading = false;

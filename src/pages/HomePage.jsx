@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchProducts } from "../redux/slices/productSlice";
-import { setCategory } from "../redux/slices/categorySlice"; // ✅ Import setCategory
+import { setCategory } from "../redux/slices/categorySlice"; 
 import { Box, Grid, TextField, MenuItem, Paper, Typography } from "@mui/material";
 import Header from "../components/Header";
 import ItemCard from "../components/ItemCard";
@@ -35,7 +35,7 @@ export default function HomePage() {
             fullWidth
             value={selectedCategory}
             size="small"
-            onChange={(e) => dispatch(setCategory(e.target.value))} // ✅ Dispatch setCategory correctly
+            onChange={(e) => dispatch(setCategory(e.target.value))} 
           >
             <MenuItem value="">All</MenuItem>
             <MenuItem value="Laptops">Laptops</MenuItem>
@@ -50,7 +50,7 @@ export default function HomePage() {
           <Grid container spacing={2} justifyContent="center">
             {items.map((product) => (
               <Grid item xs={12} sm={6} md={4} key={product._id}>
-                <ItemCard product={product} /> {/* ✅ Use Reusable Component */}
+                <ItemCard product={product} /> 
               </Grid>
             ))}
           </Grid>

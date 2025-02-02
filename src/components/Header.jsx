@@ -2,16 +2,16 @@ import React from "react";
 import { AppBar, Toolbar, Typography, IconButton, Badge } from "@mui/material";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import ReceiptIcon from "@mui/icons-material/Receipt";
-import LogoutIcon from "@mui/icons-material/Logout"; // ✅ Import Logout Icon
+import LogoutIcon from "@mui/icons-material/Logout"; 
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
 export default function Header() {
   const navigate = useNavigate();
-  const cartItems = useSelector((state) => state.cart.items); // Cart item count
+  const cartItems = useSelector((state) => state.cart.items); 
 
   return (
-    <AppBar position="sticky" sx={{ backgroundColor: "#f5f5f5", color: "#000" }}> {/* ✅ Light Mode Color */}
+    <AppBar position="sticky" sx={{ backgroundColor: "#f5f5f5", color: "#000" }}> 
       <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
         <Typography
           variant="h6"
@@ -29,7 +29,7 @@ export default function Header() {
           <IconButton onClick={() => navigate("/orders")}>
             <ReceiptIcon sx={{ color: "#000" }} />
           </IconButton>
-          <IconButton onClick={() => navigate("/login")}> {/* ✅ Logout Button */}
+          <IconButton onClick={() => navigate("/login")}> 
             <LogoutIcon sx={{ color: "#000" }} />
           </IconButton>
         </div>
