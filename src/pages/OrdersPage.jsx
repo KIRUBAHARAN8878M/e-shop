@@ -51,7 +51,7 @@ export default function OrdersPage() {
                   Placed on: {order.formattedDate}
                 </Typography>
                 <Typography variant="body1" sx={{ mt: 1 }}>
-                  Total: <strong>${order.totalPrice.toFixed(2)}</strong>
+                  Total: <strong>${order.totalPrice}</strong>
                 </Typography>
               </CardContent>
 

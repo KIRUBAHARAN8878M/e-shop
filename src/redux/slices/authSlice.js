@@ -25,11 +25,60 @@ export const loginUser = createAsyncThunk("auth/login", async (userData, { rejec
   }
 });
 
+// const authSlice = createSlice({
+//   name: "auth",
+//   initialState: {
+//     user: null,
+//     token: localStorage.getItem("token") || null,
+//     error: null,
+//     loading: false,
+//   },
+//   reducers: {
+//     logout: (state) => {
+//       state.user = null;
+//       state.token = null;
+//       localStorage.removeItem("token");
+//     },
+//   },
+//   extraReducers: (builder) => {
+//     builder
+//       .addCase(registerUser.pending, (state) => {
+//         state.loading = true;
+//         state.error = null;
+//       })
+//       .addCase(registerUser.fulfilled, (state, action) => {
+//         state.loading = false;
+//         state.user = action.payload;
+//         state.token = action.payload.token;
+//       })
+//       .addCase(registerUser.rejected, (state, action) => {
+//         state.loading = false;
+//         state.error = action.payload;
+//       })
+//       .addCase(loginUser.pending, (state) => {
+//         state.loading = true;
+//         state.error = null;
+//       })
+//       .addCase(loginUser.fulfilled, (state, action) => {
+//         state.loading = false;
+//         state.user = action.payload;
+//         state.token = action.payload.token;
+//       })
+//       .addCase(loginUser.rejected, (state, action) => {
+//         state.loading = false;
+//         state.error = action.payload;
+//       });
+//   },
+// });
+
+// export const { logout } = authSlice.actions;
+// export default authSlice.reducer;
+
 const authSlice = createSlice({
   name: "auth",
   initialState: {
     user: null,
-    token: localStorage.getItem("token") || null,
+    token: localStorage.getItem("token") || null, // ✅ Retrieve token on refresh
     error: null,
     loading: false,
   },
@@ -37,7 +86,7 @@ const authSlice = createSlice({
     logout: (state) => {
       state.user = null;
       state.token = null;
-      localStorage.removeItem("token");
+      localStorage.removeItem("token"); // ✅ Remove token on logout
     },
   },
   extraReducers: (builder) => {
@@ -50,6 +99,7 @@ const authSlice = createSlice({
         state.loading = false;
         state.user = action.payload;
         state.token = action.payload.token;
+        localStorage.setItem("token", action.payload.token); // ✅ Store token after register
       })
       .addCase(registerUser.rejected, (state, action) => {
         state.loading = false;
@@ -63,6 +113,7 @@ const authSlice = createSlice({
         state.loading = false;
         state.user = action.payload;
         state.token = action.payload.token;
+        localStorage.setItem("token", action.payload.token); // ✅ Store token after login
       })
       .addCase(loginUser.rejected, (state, action) => {
         state.loading = false;
