@@ -2,10 +2,13 @@
 
 ## **1. Project Overview**
 The E-Shop application is a **full-stack e-commerce platform** built using modern web technologies. It provides **user authentication, product browsing, shopping cart, and order management** functionalities.
-**For testing, use the below credentials:
-      Email    : testuser@gmail.com
-      Password : Test$123**
 
+---
+
+For testing, use the below credentials:
+      **Email    : testuser@gmail.com
+      Password : Test$123**
+      
 ---
 
 ## **2. Tech Stack**
